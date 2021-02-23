@@ -1,0 +1,22 @@
+.home-page {
+  height: 86vh;
+  width: 100vw;
+  background-color: #74BAFE;
+  position: relative;
+}
+
+.presentation {
+  margin: 130px;
+  color: white;
+}
+
+.skills {
+  position: absolute;
+  height: 200px;
+  width: 66%;
+  bottom: 38px;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 16px;
+}
