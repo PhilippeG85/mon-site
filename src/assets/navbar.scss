@@ -1,13 +1,21 @@
 .navbar {
-  color: white;
   display: flex;
-  justify-content: space-around;
   height: 82px;
+  position: absolute;
+  justify-content: space-around;
+  width: 100%;
   align-items: center;
+  h3 {
+    width: 44%;
+  }
 }
 
 .navbar-menu {
   display: flex;
+  width: 30%;
   justify-content: space-between;
-  width: 44%;
+}
+
+.my-portfolio {
+  font-size: 26px;
 }

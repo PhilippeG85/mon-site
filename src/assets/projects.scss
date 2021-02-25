@@ -1,0 +1,23 @@
+.project-section {
+  text-align: center;
+  height: 1200px;
+  img {
+    height: 500px;
+  }
+  h1 {
+    margin: 24px;
+    font-size: 34px;
+  }
+}
+
+.recover {
+  height: 300px;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+}
+
+.project-description {
+  color: white;
+  padding: 20px;
+}

@@ -1,22 +1,66 @@
-.home-page {
-  height: 86vh;
+.landing-page {
+  height: 100vh;
   width: 100vw;
-  background-color: #74BAFE;
   position: relative;
 }
 
-.presentation {
-  margin: 130px;
-  color: white;
+.hi {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  margin-left: 110px;
+  font-size: 40px;
+  h1{
+    padding-bottom: 112px;
+  }
 }
 
-.skills {
+.eye-svg {
   position: absolute;
-  height: 200px;
-  width: 66%;
-  bottom: 38px;
+  right: 118px;
+  top: 124px;
+  height: 304px;
+  width: 304px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.eye-hole {
   background-color: white;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 16px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.svg {
+  position: absolute;
+  left: -26px;
+  top: -10px;
+  animation: look-scale 20s ease-in 20s infinite alternate both;
+}
+
+.svg-circle {
+  animation: look 15s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate both;
+}
+
+@keyframes look {
+  0% {transform: translate(-28px, 10px)}
+  25% {transform: translate(28px, 10px)}
+  50% {transform: translate(-28px, -10px)}
+  75% {transform: translate(28px, -10px)}
+  100% {transform: translate(0px, 0px)}
+}
+
+@keyframes look-scale {
+  0%{transform: scale(2)}
+  24%{transform: scale(2)}
+  25%{transform: scale(1)}
+  100%{transform: scale(1)}
 }
