@@ -1,41 +1,69 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from "react";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
-function Projects({ setHeight, troismats, title, description, link }) {
+function Projects({ troismats, title, subtitle, description, link, id, receivedIcon }) {
   const [scroll, setScroll] = useState(0);
-  const [height] = useState(setHeight);
-
+  const [height, setHeight] = useState(0);
 
   const style = () => {
-    const scr = window.scrollY;
-    const diff = scr - height;
-    if (diff >= 0 && diff <= 396) {
+    const windowHeight = window.scrollY;
+    const diff = windowHeight - height;
+    if (diff >= 0) {
       const style = diff / 4.95;
-      setScroll(style);
-      return scroll;
+      if (style <= 80) {
+        setScroll(style);
+        return scroll;
+      } else {
+        setScroll(80);
+        return scroll;
+      }
     } else {
-      return 0;
+      setScroll(0);
+      return scroll;
     }
   };
+
+  useEffect(() => {
+    const setHeightL = document.getElementById(id);
+    const setHeightResponsive = setHeightL.offsetTop;
+    setHeight(setHeightResponsive);
+  }, [id])
 
 
   window.addEventListener('scroll', style);
 
+  const icon = receivedIcon.map((icon) => {
+    return <li key={icon.name}>{icon.name}: <img src={icon.img} alt="" className="icon-img" /></li>
+  });
+
   return (
     <div>
       <div className="project-img" style={{ overflow: "hidden" }}>
-        <img src={troismats} alt="" style={{ transform: `translateY(${scroll}%)` }} />
+        <img id={id} src={troismats} alt="" style={{ transform: `translateY(${scroll}%)` }} />
       </div>
       <div className="recover">
         <div className="project-description">
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <div>
-            <a href={link} target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faLink} />
-            </a>
+          <div className="description-content">
+            <div>
+              <h1>{title}</h1>
+              <h3>{subtitle}</h3>
+            </div>
+            <p>{description}</p>
+            <div>
+              <div style={{ position: "relative", width: "137px" }}>
+                <a href={link} target="_blank" rel="noreferrer">
+                  <p>Link to the website</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="icon-div">
+            <p>Built with:</p>
+            <ul className="icon-list">
+              {icon}
+            </ul>
           </div>
         </div>
       </div>
