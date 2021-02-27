@@ -6,17 +6,18 @@ import React, { useState, useEffect } from "react";
 function Projects({ troismats, title, subtitle, description, link, id, receivedIcon }) {
   const [scroll, setScroll] = useState(0);
   const [height, setHeight] = useState(0);
+  const [heightImg, setHeightImg] = useState(0);
 
   const style = () => {
     const windowHeight = window.scrollY;
     const diff = windowHeight - height;
     if (diff >= 0) {
-      const style = diff / 4.95;
-      if (style <= 80) {
+      if (diff <= (heightImg)) {
+        const style = diff / 2;
         setScroll(style);
         return scroll;
       } else {
-        setScroll(80);
+        setScroll(heightImg * 0.8);
         return scroll;
       }
     } else {
@@ -28,6 +29,8 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
   useEffect(() => {
     const setHeightL = document.getElementById(id);
     const setHeightResponsive = setHeightL.offsetTop;
+    const setImgHeight = setHeightL.offsetHeight;
+    setHeightImg(setImgHeight);
     setHeight(setHeightResponsive);
   }, [id])
 
@@ -40,8 +43,10 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
 
   return (
     <div>
-      <div className="project-img" style={{ overflow: "hidden" }}>
-        <img id={id} src={troismats} alt="" style={{ transform: `translateY(${scroll}%)` }} />
+      <div className="animation-on-scroll">
+        <div className="project-img" style={{ overflow: "hidden" }}>
+          <img id={id} src={troismats} alt="" style={{ transform: `translate(0px, ${scroll}px)` }} />
+        </div>
       </div>
       <div className="recover">
         <div className="project-description">
