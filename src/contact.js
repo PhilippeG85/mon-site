@@ -4,7 +4,7 @@ import MapContainer from "./map";
 
 function Contact() {
   return (
-    <div className="contact-page">
+    <div id="contact" className="contact-page">
       <div className="form-left">
         <h1 className="style-form-left" style={{ marginBottom: "40px" }}>Contact me</h1>
         <p className="style-form-left" style={{ margin: "18px auto" }}>

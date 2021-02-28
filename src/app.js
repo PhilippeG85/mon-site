@@ -27,10 +27,10 @@ function App() {
         <Navbar />
         <Home />
       </div>
-      <div>
+      <div id="about">
         <About />
       </div>
-      <section className="project-section">
+      <section id="projects" className="project-section">
         <h1>Some of my Work</h1>
         <Projects
           troismats={troismats}
