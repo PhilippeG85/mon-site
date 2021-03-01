@@ -18,14 +18,14 @@
 .eye-svg {
   position: absolute;
   right: 118px;
-  top: 150px;
+  top: 114px;
   height: 304px;
   width: 304px;
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
+  border-radius: 14px;
 }
 
 .eye-hole {
@@ -71,6 +71,7 @@
   }
   .eye-svg {
     right: 320px;
+    top: 150px;
   }
 }
 
