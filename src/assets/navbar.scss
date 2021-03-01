@@ -9,8 +9,8 @@
 
 .navbar-menu {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  min-width: 40%;
+  justify-content: space-around;
 }
 
 .my-portfolio {
@@ -25,6 +25,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &:focus {
+    color: black;
+    text-decoration: none;
+  }
   &:hover {
     text-decoration: none;
     color: black;
@@ -38,8 +42,25 @@
   }
 }
 
+.navbar-menu-mobile {
+  display: none;
+}
+
 @keyframes turn {
   0% {transform: rotate(0deg)}
   50% {transform: rotate(180deg)}
   100% {transform: rotate(360deg)}
+}
+
+@media screen and (max-width: 700px) {
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-menu-mobile {
+    display: block;
+    margin-left: 42px;
+  }
+  .navbar {
+    justify-content: space-between;
+  }
 }

@@ -4,7 +4,7 @@ import me from "./assets/img/me.jpg";
 
 function About() {
   return (
-    <div className="container about-page">
+    <div className="about-page">
       <h1>About-me</h1>
       <div className="about-info">
         <p>

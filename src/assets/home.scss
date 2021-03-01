@@ -18,7 +18,7 @@
 .eye-svg {
   position: absolute;
   right: 118px;
-  top: 124px;
+  top: 150px;
   height: 304px;
   width: 304px;
   background-color: black;
@@ -63,4 +63,29 @@
   24%{transform: scale(2)}
   25%{transform: scale(1)}
   100%{transform: scale(1)}
+}
+
+@media screen and (min-width: 2000px) {
+  .hi {
+    margin-left: 200px;
+  }
+  .eye-svg {
+    right: 320px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hi {
+    margin-left: 26px;
+    h1 {
+      font-size: 46px;
+      padding-bottom: 76px;
+    }
+  }
+  .eye-svg {
+    right: 40px;
+    top: 124px;
+    height: 242px;
+    width: 242px;
+  }
 }

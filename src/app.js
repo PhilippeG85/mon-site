@@ -4,7 +4,7 @@ import Svg from "./svg";
 import Home from "./home";
 import Projects from "./projects";
 import About from "./about";
-import Contact from "./contact";
+import Footer from "./footer";
 
 import troismats from "./assets/img/troismats.PNG";
 import helper from "./assets/img/helper.JPG";
@@ -51,7 +51,7 @@ function App() {
           receivedIcon={[{name: 'Html', img: html}, {name: 'Css', img: css}, {name: 'Javascript', img: js}, {name: 'Ruby on Rails', img: rails}, {name: 'Github', img: github}, {name: 'Heroku', img: ""}]}
         />
       </section>
-      <Contact />
+      <Footer />
     </>
   );
 }

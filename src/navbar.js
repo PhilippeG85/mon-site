@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   return (
@@ -17,6 +19,9 @@ function Navbar() {
         <a className="navbar-link" href="#contact">
           <h3 style={{ fontWeight: "lighter" }}>Contact</h3>
         </a>
+      </div>
+      <div className="navbar-menu-mobile">
+        <FontAwesomeIcon icon={faBars} />
       </div>
     </div>
   );

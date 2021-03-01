@@ -129,3 +129,25 @@
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .recover {
+    height: 100%;
+  }
+  .project-description {
+    padding: 18px;
+    flex-direction: column;
+  }
+  .description-content {
+    width: 100%;
+    margin: 0px;
+    p {
+      margin-top: 10px;
+    }
+  }
+  .icon-div {
+    margin-top: 32px;
+    height: 250px;
+    width: 210px;
+  }
+}
