@@ -14,7 +14,7 @@ function Navbar() {
     <div className="navbar">
       <h3 className="my-portfolio">My Portfolio<span style={{ color: "red"}}>.</span></h3>
       <div className="navbar-menu">
-        <a className="navbar-link" href="#about">
+        <a className="navbar-link" href="#home">
           <h3 style={{ fontWeight: "lighter" }}>Home</h3>
         </a>
         <a className="navbar-link" href="#about">
