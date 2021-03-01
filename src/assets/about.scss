@@ -1,7 +1,6 @@
 .about-page {
   text-align: center;
   margin: 32px auto;
-  padding: 12px;
   border: 1px solid black;
   box-shadow: -8px 10px;
   border-radius: 14px;
@@ -13,8 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 20px;
-  padding: 0 22px;
+  padding: 22px;
   p {
     text-align: left;
     padding-right: 60px;
@@ -22,6 +20,60 @@
   img {
     height: 280px;
     border-radius: 50%;
+  }
+  h1 {
+    margin-bottom: 22px;
+  }
+}
+
+.about-info {
+  a {
+    span {
+      color: #4c4a57;
+      font-size: 16px;
+    }
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover {
+      text-decoration: none;
+    }
+    &:before {
+      bottom: 8px;
+      top: 8px;
+      height: auto;
+      opacity: 0.5;
+      left: -5px;
+      right: -5px;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition-duration: 400ms;
+      background: #ff5851;
+      content: "";
+      position: absolute;
+      transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+    }
+    &:hover:before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    &:after {
+      transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+      position: absolute;
+      content: "";
+      background: black;
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      transition-duration: 400ms;
+      top: 20px;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+    }
+    &:hover:after {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+    }
   }
 }
 
@@ -32,5 +84,8 @@
     p {
       padding-right: 0px;
     }
+  }
+  .mobile-space {
+    margin-bottom: 22px;
   }
 }

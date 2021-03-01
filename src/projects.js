@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
-
 function Projects({ troismats, title, subtitle, description, link, id, receivedIcon }) {
   const [scroll, setScroll] = useState(0);
   const [height, setHeight] = useState(0);
