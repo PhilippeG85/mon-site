@@ -69,6 +69,16 @@
   }
 }
 
+.message-sent {
+  position: absolute;
+  color: #8F8F89;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
 @media screen and (max-width: 720px) {
   .style-form-left {
     width: 305px;

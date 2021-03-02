@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Projects({ img, isMobile, title, subtitle, description, link, id, receivedIcon }) {
+function Projects({ img, title, subtitle, description, link, id, receivedIcon }) {
   const [scroll, setScroll] = useState(0);
   const [height, setHeight] = useState(0);
   const [heightImg, setHeightImg] = useState(0);
@@ -22,7 +22,6 @@ function Projects({ img, isMobile, title, subtitle, description, link, id, recei
       return scroll;
     }
   };
-  console.log(isMobile);
 
   useEffect(() => {
     const setHeightL = document.getElementById(id);
