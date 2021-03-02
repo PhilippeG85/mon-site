@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Projects({ troismats, title, subtitle, description, link, id, receivedIcon }) {
+function Projects({ img, isMobile, title, subtitle, description, link, id, receivedIcon }) {
   const [scroll, setScroll] = useState(0);
   const [height, setHeight] = useState(0);
   const [heightImg, setHeightImg] = useState(0);
@@ -14,7 +14,7 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
         setScroll(style);
         return scroll;
       } else {
-        setScroll(heightImg * 0.8);
+        // setScroll(heightImg * 0.8);
         return scroll;
       }
     } else {
@@ -22,6 +22,7 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
       return scroll;
     }
   };
+  console.log(isMobile);
 
   useEffect(() => {
     const setHeightL = document.getElementById(id);
@@ -29,7 +30,7 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
     const setImgHeight = setHeightL.offsetHeight;
     setHeightImg(setImgHeight);
     setHeight(setHeightResponsive);
-  }, [id])
+  }, [])
 
 
   window.addEventListener('scroll', style);
@@ -42,7 +43,7 @@ function Projects({ troismats, title, subtitle, description, link, id, receivedI
     <div>
       <div className="animation-on-scroll">
         <div className="project-img" style={{ overflow: "hidden" }}>
-          <img id={id} src={troismats} alt="" style={{ transform: `translate(0px, ${scroll}px)` }} />
+          <img id={id} src={img} alt="" style={{ transform: `translate(0px, ${scroll}px)` }} />
         </div>
       </div>
       <div className="recover">
