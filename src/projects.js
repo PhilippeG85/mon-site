@@ -10,7 +10,7 @@ function Projects({ img, title, subtitle, description, link, id, receivedIcon })
     const diff = windowHeight - height;
     if (diff >= 0) {
       if (diff <= (heightImg)) {
-        const style = diff / 2;
+        const style = Math.round(diff / 2);
         setScroll(style);
         return scroll;
       } else {
