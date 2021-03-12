@@ -59,10 +59,10 @@
 }
 
 @keyframes look-scale {
-  0%{transform: scale(2)}
-  24%{transform: scale(2)}
-  25%{transform: scale(1)}
-  100%{transform: scale(1)}
+  0%{transform: scale(1)}
+  74%{transform: scale(1)}
+  75%{transform: scale(2)}
+  100%{transform: scale(2)}
 }
 
 @media screen and (min-width: 2000px) {
