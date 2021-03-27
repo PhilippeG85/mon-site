@@ -29,12 +29,20 @@ function App() {
   const isMobile = useMediaQuery({
     query: '(max-device-width: 500px)'
   });
+  const isPortrait = useMediaQuery({
+    query: '(orientation: portrait)'
+  });
+
+  const style = isPortrait ? { flexDirection: "column-reverse" } : {}
+
   return (
     <div className="app">
       <div className="landing-page">
-        <Svg />
         <Navbar />
-        <Home />
+        <div style={ style } className="home-page-content">
+          <Home />
+          <Svg />
+        </div>
       </div>
       <div id="about">
         <About />

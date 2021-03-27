@@ -1,0 +1,88 @@
+.eye-svg {
+    position: absolute;
+    right: 118px;
+    top: 114px;
+    height: 304px;
+    width: 304px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+}
+  
+.eye-hole {
+    background-color: white;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.svg {
+    position: absolute;
+    left: -26px;
+    top: -10px;
+    animation: look-scale 20s ease-in 20s infinite alternate both;
+}
+  
+.svg-circle {
+    animation: look 15s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate both;
+}
+
+.illustration-img {
+    object-fit: contain;
+    max-width: 500px;
+    img {
+        animation: loadi 4s ease-in 1s both;
+        opacity: 0;
+        width: 100%;
+    }
+}
+
+@keyframes loadi {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes look {
+    0% {transform: translate(0px, 0px)}
+    25% {transform: translate(10%, 4%)}
+    50% {transform: translate(-10%, 4%)}
+    75% {transform: translate(10%, -4%)}
+    100% {transform: translate(-10%, -4%)}
+}
+  
+@keyframes look-scale {
+    0%{transform: scale(1)}
+    74%{transform: scale(1)}
+    75%{transform: scale(2)}
+    100%{transform: scale(2)}
+}
+
+@media screen and (min-width: 2000px) {
+    .eye-svg {
+        right: 320px;
+        top: 150px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .illustration-img {
+        margin-left: 4rem;
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .eye-svg {
+        right: 40px;
+        top: 124px;
+        height: 242px;
+        width: 242px;
+    }
+}
+    

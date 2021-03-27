@@ -3,90 +3,81 @@
   width: 100%;
   position: relative;
 }
+.span-name {
+  white-space: nowrap;
+}
 
 .hi {
   display: flex;
   align-items: flex-end;
-  height: 100%;
-  margin-left: 110px;
+  margin-left: 4rem;
+  padding-bottom: 6%;
   h1{
     font-size: 80px;
-    padding-bottom: 112px;
+    z-index: 2;
+    span {
+      transition: all .3s ease;
+      display: inline-block;
+      &:hover {
+        color: #D74050;
+        animation: span 1s ease 1 both;
+      }
+    }
   }
 }
 
-.eye-svg {
-  position: absolute;
-  right: 118px;
-  top: 114px;
-  height: 304px;
-  width: 304px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 14px;
-}
-
-.eye-hole {
-  background-color: white;
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
+.home-page-content {
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
+  justify-content: space-around;
+  height: 100vh;
+  padding-top: 72px;
 }
 
-.svg {
-  position: absolute;
-  left: -26px;
-  top: -10px;
-  animation: look-scale 20s ease-in 20s infinite alternate both;
+.animate {
+  white-space: nowrap;
+  perspective-origin: bottom;
+  perspective: 100px;
 }
 
-.svg-circle {
-  animation: look 15s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate both;
+.set-perspective {
+  animation: onload 1.5s ease 1 both;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
 }
 
-@keyframes look {
-  0% {transform: translate(0px, 0px)}
-  25% {transform: translate(10%, 4%)}
-  50% {transform: translate(-10%, 4%)}
-  75% {transform: translate(10%, -4%)}
-  100% {transform: translate(-10%, -4%)}
+@keyframes span {
+  0%{transform: rotateX(0deg)}
+  50%{transform: rotateX(45deg);}
+  75%{transform: rotateX(0deg); transform: rotateY(45deg)}
+  82%{transform: rotateY(-45deg)}
+  100%{transform: rotate(0deg, 0deg);}
 }
 
-@keyframes look-scale {
-  0%{transform: scale(1)}
-  74%{transform: scale(1)}
-  75%{transform: scale(2)}
-  100%{transform: scale(2)}
+@keyframes onload {
+  from{transform: rotateX(90deg)}
+  to{transform: rotateX(0deg)}
 }
 
 @media screen and (min-width: 2000px) {
   .hi {
     margin-left: 200px;
   }
-  .eye-svg {
-    right: 320px;
-    top: 150px;
+}
+
+@media screen and (max-width: 620px) {
+  .home-page-content {
+    padding-top: 100px;
+  }
+  .hi {
+    margin-left: 0px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 840px) {
   .hi {
-    margin-left: 26px;
     h1 {
       font-size: 46px;
-      padding-bottom: 76px;
     }
-  }
-  .eye-svg {
-    right: 40px;
-    top: 124px;
-    height: 242px;
-    width: 242px;
   }
 }

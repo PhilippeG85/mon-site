@@ -5,6 +5,7 @@
   justify-content: space-around;
   width: 100%;
   align-items: center;
+  top: 0;
 }
 
 .navbar-menu {
@@ -32,14 +33,31 @@
   &:hover {
     text-decoration: none;
     color: black;
-    animation: turn 1s ease-out .5s 1 normal both;
+    // animation: turn 1s ease-out .5s 1 normal both;
   }
-  h3 {
-    transition: transform ease .5s;
-    &:hover {
-      transform: scale(1.2);
-    }
+  &:before {
+    position: absolute;
+    opacity: 0.5;
+    content: "";
+    bottom: 8px;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #ff5851;
+    transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+    transform-origin: right;
+    transform: scaleX(0);
   }
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  // h3 {
+  //   transition: transform ease .5s;
+  //   &:hover {
+  //     transform: scale(1.2);
+  //   }
+  // }
 }
 
 .navbar-menu-mobile {
